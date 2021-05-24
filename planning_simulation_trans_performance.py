@@ -186,15 +186,15 @@ def main():
     # All terrains by macro-categories
     categories = {}
     # Very loose snow/sand
-    categories["vls_ids"] = [18, 19, 20, 21]
+    categories["1"] = [18, 19, 20, 21]
     # Clay high moisture content
-    categories["chm_ids"] = [7, 8, 10, 12]
+    categories["2"] = [7, 8, 10, 12]
     # Loose sand
-    categories["ls_ids"] = [2, 5, 0, 22]
+    categories["3"] = [2, 5, 0, 22]
     # Sandy loams, moderately loose
-    categories["sl_ids"] = [1, 3, 4, 13, 14, 15, 16, 17]
+    categories["4"] = [1, 3, 4, 13, 14, 15, 16, 17]
     # Compact clay
-    categories["cc_ids"] = [9, 11]
+    categories["5"] = [9, 11]
     
     
     if params["categories"]:
