@@ -2,7 +2,7 @@
 This is the adaptive path planner implementation of the paper: *"Deep Meta-Learning Energy-Aware Path Planner for Mobile Robots in Uknown Environments", Visca et al., 2021*.
 
 ## Effect of Terrain Transition Experiment
-In this experiment, the adaptation performance of the adaptive meta-learning path planner are tested, when the robot transitions on a new terrain.
+In this experiment, the performance of the meta-adaptive path planner are tested, when the robot transitions on a new terrain.
 
 Run `planning_simulation_trans_performance.py`.
 
