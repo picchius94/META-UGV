@@ -14,7 +14,7 @@ from sklearn.metrics import mean_squared_error
 from sklearn.metrics import r2_score
 random.seed(111)
 #random.seed(55)
-VISUALISATION = False
+VISUALISATION = True
 plot_graphs = True
 
 path_terrains = "./Terrains/"
