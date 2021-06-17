@@ -2,7 +2,7 @@
 This is the adaptive path planner implementation of the paper: *"Deep Meta-Learning Energy-Aware Path Planner for Unmanned Ground Vehicles", Visca et al., 2021*.
 
 <img src="https://github.com/picchius94/META-UGV/blob/main/transition.gif" width="400">
-<img src="https://drive.google.com/file/d/1LEZW7wTJ7-689ZSaK-4Nj4qDVMXcVdy4/view?usp=sharing" width="400">
+
 ## Effect of Terrain Transition Experiment
 In this experiment, the performance of the meta-adaptive path planner are tested, when the vehicle transitions on a new terrain.
 
