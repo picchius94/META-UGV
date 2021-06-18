@@ -21,7 +21,9 @@ All the entries of the dictionary `params` can be changed to modify terrain type
 ### Terrain Types and SCM Parameters
 Our method is implemented using the Project Chrono implementation of the Soil Contact Model (SCM). The complete list of implemented terrain types and respective terramechanical parameters is given.
 
-<img align="center" src="https://github.com/picchius94/META-UGV/blob/main/table_scm_params.png" width="700">
+<p align="center">
+<img src="https://github.com/picchius94/META-UGV/blob/main/table_scm_params.png" width="700">
+</p>
 
 ### Neural Network Models
 The meta-learning, and separate supervised learning models are given in `models.py`
