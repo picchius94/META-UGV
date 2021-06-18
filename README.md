@@ -1,5 +1,5 @@
-# Deep Meta-Learning Energy-Aware Path Planner for Unmanned Ground Vehicles
-This is the adaptive path planner implementation of the paper: *"Deep Meta-Learning Energy-Aware Path Planner for Unmanned Ground Vehicles", Visca et al., 2021*.
+# Deep Meta-Learning Energy-Aware Path Planner for Unmanned Ground Vehicles in Unknown Terrain
+This is the adaptive path planner implementation of the paper: *"Deep Meta-Learning Energy-Aware Path Planner for Unmanned Ground Vehicles in Unknown Terrain", Visca et al., 2021*.
 
 <img src="https://github.com/picchius94/META-UGV/blob/main/transition.gif" width="300"> <img src="https://github.com/picchius94/META-UGV/blob/main/transition2.gif" width="300">
 
