@@ -25,7 +25,7 @@ The following dependencies are required:
 - opensimplex
 
 ### Note!
-Line 37 in `my_chrono_simulator` must be changed with the correct path to the Chrono Data folder.
+Line 37 in `my_chrono_simulator.py` must be changed with the correct path to the Chrono Data folder.
 
 ## Effect of Terrain Transition Experiment
 In this experiment, the performance of the meta-adaptive path planner are tested, when the vehicle transitions on a new terrain.
