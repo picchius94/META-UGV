@@ -3,6 +3,23 @@ This is the adaptive path planner implementation of the paper: *"Deep Meta-Learn
 
 <img src="https://github.com/picchius94/META-UGV/blob/main/Images/transition.gif" width="300"> <img src="https://github.com/picchius94/META-UGV/blob/main/Images/transition2.gif" width="300"> <img src="https://github.com/picchius94/META-UGV/blob/main/Images/transition3.gif" width="300">
 
+## Experiments
+### Note!
+Line 37 in `my_chrono_simulator.py` must be changed with the correct local path to the Chrono Data directory.
+### Effect of Terrain Transition
+In this experiment, the performance of the meta-adaptive path planner are tested, when the vehicle transitions on a new terrain.
+
+Run `planning_simulation_trans_performance.py`.
+
+All the entries of the dictionary `params` can be changed to modify terrain type, map size, initial vehicle position, etc..
+
+### Effect of Heuristic Function
+In this experiment, the effect of different heuristic functions for the meta-adaptive path planner are tested.
+
+Run `planning_simulation_h_performance.py`.
+
+All the entries of the dictionary `params` can be changed to modify terrain type, map size, initial vehicle position, etc..
+
 ## Miscellaneous
 ### Terrain Types and SCM Parameters
 Deformable terrains are modelled using the Project Chrono [[1]](#1) implementation of the Soil Contact Model (SCM) [[2]](#2). The complete list of implemented terrain types and respective terramechanical parameters is given in `terrain_list.py`.
@@ -23,24 +40,6 @@ The following dependencies are required:
 - pychrono
 - tensorflow
 - opensimplex
-
-### Note!
-Line 37 in `my_chrono_simulator.py` must be changed with the correct path to the Chrono Data folder.
-
-## Experiments
-### Effect of Terrain Transition
-In this experiment, the performance of the meta-adaptive path planner are tested, when the vehicle transitions on a new terrain.
-
-Run `planning_simulation_trans_performance.py`.
-
-All the entries of the dictionary `params` can be changed to modify terrain type, map size, initial vehicle position, etc..
-
-### Effect of Heuristic Function
-In this experiment, the effect of different heuristic functions for the meta-adaptive path planner are tested.
-
-Run `planning_simulation_h_performance.py`.
-
-All the entries of the dictionary `params` can be changed to modify terrain type, map size, initial vehicle position, etc..
 
 
 ## References
