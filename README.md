@@ -8,7 +8,7 @@ This is the adaptive path planner implementation of the paper: *"Deep Meta-Learn
 Deformable terrains are modelled using the Project Chrono implementation of the Soil Contact Model (SCM). The complete list of implemented terrain types and respective terramechanical parameters is given in `terrain_list.py`.
 
 <p align="center">
-<img src="https://github.com/picchius94/META-UGV/blob/main/Images/table_scm_params.png" width="700">
+<img src="https://github.com/picchius94/META-UGV/blob/main/Images/terrain_types.png" width="700">
 </p>
 
 ### Neural Network Models
