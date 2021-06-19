@@ -5,7 +5,7 @@ This is the adaptive path planner implementation of the paper: *"Deep Meta-Learn
 
 ## Miscellaneous
 ### Terrain Types and SCM Parameters
-Deformable terrains are modelled using the Project Chrono implementation of the Soil Contact Model (SCM). The complete list of implemented terrain types and respective terramechanical parameters is given in `terrain_list.py`.
+Deformable terrains are modelled using the Project Chrono [[1]](#1) implementation of the Soil Contact Model (SCM) [[2]](#2). The complete list of implemented terrain types and respective terramechanical parameters is given in `terrain_list.py`.
 
 <p align="center">
 <img src="https://github.com/picchius94/META-UGV/blob/main/Images/terrain_types.png" width="700">
@@ -41,3 +41,9 @@ Run `planning_simulation_h_performance.py`.
 
 All the entries of the dictionary `params` can be changed to modify terrain type, map size, initial vehicle position, etc..
 
+
+## References
+<a id="1">[1]</a> 
+A. Tasora, R. Serban, H. Mazhar, A. Pazouki, D. Melanz, J. Fleischmann, M. Taylor, H. Sugiyama, and D. Negrut, “Chrono: An open source multi-physics dynamics engine,” in International Conference on High Performance Computing in Science and Engineering. Springer, 2015, pp. 19–49.
+<a id="2">[2]</a>
+F. Buse, R. Lichtenheldt, and R. Krenn, “Scm-a novel approach for soil deformation in a modular soil contact model for multibody simulation”, IMSD2016 e-Proceedings, 2016.
