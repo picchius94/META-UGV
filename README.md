@@ -4,8 +4,6 @@ This is the implementation of the paper: *"Deep Meta-Learning Energy-Aware Path 
 <img src="https://github.com/picchius94/META-UGV/blob/main/Images/transition.gif" width="270"> <img src="https://github.com/picchius94/META-UGV/blob/main/Images/transition2.gif" width="270"> <img src="https://github.com/picchius94/META-UGV/blob/main/Images/transition3.gif" width="270">
 
 ## Experiments
-### Note!
-Line 37 in `my_chrono_simulator.py` must be changed with the correct local path to the Chrono Data directory.
 ### Effect of Terrain Transition
 In this experiment, the performance of the meta-adaptive path planner are tested, when the vehicle transitions on a new terrain.
 
@@ -19,6 +17,9 @@ In this experiment, the effect of different heuristic functions for the meta-ada
 Run `planning_simulation_h_performance.py`.
 
 All the entries of the dictionary `params` can be changed to modify terrain type, map size, initial vehicle position, etc..
+
+### Note!
+Line 37 in `my_chrono_simulator.py` must be changed with the correct local path to the Chrono Data directory.
 
 ## Miscellaneous
 ### Terrain Types and SCM Parameters
