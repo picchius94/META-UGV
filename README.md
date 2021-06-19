@@ -3,20 +3,6 @@ This is the adaptive path planner implementation of the paper: *"Deep Meta-Learn
 
 <img src="https://github.com/picchius94/META-UGV/blob/main/Images/transition.gif" width="300"> <img src="https://github.com/picchius94/META-UGV/blob/main/Images/transition2.gif" width="300">
 
-## Effect of Terrain Transition Experiment
-In this experiment, the performance of the meta-adaptive path planner are tested, when the vehicle transitions on a new terrain.
-
-Run `planning_simulation_trans_performance.py`.
-
-All the entries of the dictionary `params` can be changed to modify terrain type, map size, initial vehicle position, etc..
-
-## Effect of Heuristic Function Experiment
-In this experiment, the effect of different heuristic functions for the meta-adaptive path planner are tested.
-
-Run `planning_simulation_h_performance.py`.
-
-All the entries of the dictionary `params` can be changed to modify terrain type, map size, initial vehicle position, etc..
-
 ## Miscellaneous
 ### Terrain Types and SCM Parameters
 Our method is implemented using the Project Chrono implementation of the Soil Contact Model (SCM). The complete list of implemented terrain types and respective terramechanical parameters is given in `terrain_list.py`.
@@ -38,4 +24,20 @@ The following dependencies are required:
 - tensorflow
 - opensimplex
 
+### Note!
+Line 37 in `my_chrono_simulator` must be changed with the correct path to the Chrono Data folder.
+
+## Effect of Terrain Transition Experiment
+In this experiment, the performance of the meta-adaptive path planner are tested, when the vehicle transitions on a new terrain.
+
+Run `planning_simulation_trans_performance.py`.
+
+All the entries of the dictionary `params` can be changed to modify terrain type, map size, initial vehicle position, etc..
+
+## Effect of Heuristic Function Experiment
+In this experiment, the effect of different heuristic functions for the meta-adaptive path planner are tested.
+
+Run `planning_simulation_h_performance.py`.
+
+All the entries of the dictionary `params` can be changed to modify terrain type, map size, initial vehicle position, etc..
 
