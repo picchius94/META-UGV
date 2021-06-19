@@ -45,5 +45,6 @@ All the entries of the dictionary `params` can be changed to modify terrain type
 ## References
 <a id="1">[1]</a> 
 A. Tasora, R. Serban, H. Mazhar, A. Pazouki, D. Melanz, J. Fleischmann, M. Taylor, H. Sugiyama, and D. Negrut, “Chrono: An open source multi-physics dynamics engine,” in International Conference on High Performance Computing in Science and Engineering. Springer, 2015, pp. 19–49.
+
 <a id="2">[2]</a>
 F. Buse, R. Lichtenheldt, and R. Krenn, “Scm-a novel approach for soil deformation in a modular soil contact model for multibody simulation”, IMSD2016 e-Proceedings, 2016.
