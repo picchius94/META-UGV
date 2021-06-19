@@ -5,7 +5,7 @@ This is the adaptive path planner implementation of the paper: *"Deep Meta-Learn
 
 ## Miscellaneous
 ### Terrain Types and SCM Parameters
-Our method is implemented using the Project Chrono implementation of the Soil Contact Model (SCM). The complete list of implemented terrain types and respective terramechanical parameters is given in `terrain_list.py`.
+Deformable terrains are modelled using the Project Chrono implementation of the Soil Contact Model (SCM). The complete list of implemented terrain types and respective terramechanical parameters is given in `terrain_list.py`.
 
 <p align="center">
 <img src="https://github.com/picchius94/META-UGV/blob/main/Images/table_scm_params.png" width="700">
