@@ -37,7 +37,7 @@ All the entries of the dictionary `params` can be changed to modify terrain type
 
 ## Miscellaneous
 ### Terrain Types and SCM Parameters
-Deformable terrains are modelled using the Project Chrono [[1]](#1) implementation of the Soil Contact Model (SCM) [[2]](#2). The complete list of implemented terrain types and respective terramechanical parameters is given in `terrain_list.py`.
+Deformable terrains are modelled using the Project Chrono [[1]](#1) implementation of the Soil Contact Model (SCM) [[2]](#2). The complete list of implemented terrain types and respective terramechanical parameters is given in the image below and at `terrain_list.py`.
 
 <p align="center">
 <img src="https://github.com/picchius94/META-UGV/blob/main/Images/terrain_types.png" width="700">
