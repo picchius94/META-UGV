@@ -8,7 +8,7 @@ A dataset of geometry-energy pairs from different terrain types has already been
 
 If you want to collect new data, modify and run `collect_dataset.py`.
 ### Note!
-Line 37 in `my_chrono_simulator.py` must be changed with the correct local path to the Chrono Data directory.
+For visualisation, Line 37 in `my_chrono_simulator.py` must be changed with the correct local path to the Chrono Data directory.
 
 ## Training Model
 The different neural network models have already been trained on the `./Dataset/Exp00/data.csv` dataset and the model weights are available at `./Training/Exp00/log*`.
@@ -19,7 +19,7 @@ If you want to train new models, modify and run `train_meta.py` or `train_separa
 
 ## Experiments
 ### Note!
-Line 37 in `my_chrono_simulator.py` must be changed with the correct local path to the Chrono Data directory.
+For visualisation, Line 37 in `my_chrono_simulator.py` must be changed with the correct local path to the Chrono Data directory.
 ### Effect of Terrain Transition
 In this experiment, the performance of the meta-adaptive path planner are tested, when the vehicle transitions on a new terrain.
 
