@@ -17,7 +17,10 @@ random.seed(111)
 VISUALISATION = True
 plot_graphs = True
 
-path_terrains = "./Terrains/"
+path_data = "./Trans_performance/"
+current_time = datetime.now().strftime("%Y-%m-%d %H-%M-%S")
+path_experiment = path_data + "Exp_{}/".format(current_time)
+path_maps = path_experiment + "Simplex_Maps/"
 
 params = {}
 params["Version"] = "path_planning_experiment_h_performance"
@@ -150,12 +153,20 @@ def isint(x):
         return True
     except ValueError:
         return False
+
+# Create Directories
+if not os.path.exists(path_data):
+    os.mkdir(path_data)
+if not os.path.exists(path_experiment):
+    os.mkdir(path_experiment)
+if not os.path.exists(path_maps):
+        os.makedirs(path_maps)
 def main():
     current_time = datetime.now().strftime("%Y-%m-%d %H-%M-%S")
-    if not os.path.exists(path_terrains):
-        os.makedirs(path_terrains)
+    if not os.path.exists(path_maps):
+        os.makedirs(path_maps)
     # Create random simplex map
-    path_image = path_terrains + '{}.bmp'.format(current_time)
+    path_image = path_maps + '{}.bmp'.format(current_time)
     Z = generate_Simplex(params["map_size_x"], params["map_size_y"], path_image)
     
     

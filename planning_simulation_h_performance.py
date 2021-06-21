@@ -17,6 +17,10 @@ os.environ["CUDA_VISIBLE_DEVICES"] = "{}".format(0)
 
 VISUALISATION = False
 
+path_data = "./H_performance/"
+current_time = datetime.now().strftime("%Y-%m-%d %H-%M-%S")
+path_experiment = path_data + "Exp_{}/".format(current_time)
+path_maps = path_experiment + "Simplex_Maps/"
 
 params = {}
 params["Version"] = "path_planning_experiment_h_performance"
@@ -147,12 +151,16 @@ def search_path(path_planner, start, goal, method):
     return id_a, states, costs, path_planner.elapsed_time, path_planner.nodes_expanded
         
 
+# Create Directories
+if not os.path.exists(path_data):
+    os.mkdir(path_data)
+if not os.path.exists(path_experiment):
+    os.mkdir(path_experiment)
+if not os.path.exists(path_maps):
+        os.makedirs(path_maps)
 def main():
     # Create Experiment DIrectories and Files
     current_time = datetime.now().strftime("%Y-%m-%d %H-%M-%S")
-    path_terrains = "./Terrains/"
-    if not os.path.exists(path_terrains):
-        os.makedirs(path_terrains)
     # Loop over Experiment Files
     dirs = os.listdir(params["EXPERIMENT_ID"])
     files = []
@@ -182,7 +190,7 @@ def main():
             
     print("File: {}. Terrain Type: {}".format(file,terrain_type))
     # Generate new Map
-    path_image = path_terrains + '{}.bmp'.format(current_time)
+    path_image = path_maps + '{}.bmp'.format(current_time)
     Z = generate_Simplex(params["map_size_x"], params["map_size_y"], path_image)
     
     max_time_meta_inf = params["MAX_TIMEOUT"]
