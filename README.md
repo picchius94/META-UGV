@@ -4,13 +4,13 @@ This is the implementation of the paper: *"Deep Meta-Learning Energy-Aware Path 
 <img src="https://github.com/picchius94/META-UGV/blob/main/Images/transition.gif" width="270"> <img src="https://github.com/picchius94/META-UGV/blob/main/Images/transition2.gif" width="270"> <img src="https://github.com/picchius94/META-UGV/blob/main/Images/transition3.gif" width="270">
 
 ## Dataset Collection
-Note: a dataset of geometry-energy pairs from different terrain types has already been collected and it is avalilable at `./Dataset/Exp00/data.csv`.
+A dataset of geometry-energy pairs from different terrain types has already been collected and it is avalilable at `./Dataset/Exp00/data.csv`.
 If you want to collect new data, modify and run `collect_dataset.py`.
 ### Note!
 Line 37 in `my_chrono_simulator.py` must be changed with the correct local path to the Chrono Data directory.
 
 ## Training Model
-Note: the different neural network models have already been trained on the `./Dataset/Exp00/data.csv` dataset and the model weights are available at `./Training/Exp00/log*`.
+The different neural network models have already been trained on the `./Dataset/Exp00/data.csv` dataset and the model weights are available at `./Training/Exp00/log*`.
 If you want to create new models, modify `models.py`.
 If you want to train new models, modify and run `train_meta.py` or `train_separate_model.py`.
 
