@@ -4,7 +4,7 @@ This is the implementation of the paper: *"Deep Meta-Learning Energy-Aware Path 
 <img src="https://github.com/picchius94/META-UGV/blob/main/Images/transition.gif" width="270"> <img src="https://github.com/picchius94/META-UGV/blob/main/Images/transition2.gif" width="270"> <img src="https://github.com/picchius94/META-UGV/blob/main/Images/transition3.gif" width="270">
 
 
-## Experiments
+1. ## Experiments
 ### Effect of Terrain Transition
 In this experiment, the performance of the meta-adaptive path planner are tested, when the vehicle transitions on a new terrain.
 
@@ -25,7 +25,7 @@ Line 37 in `my_chrono_simulator.py` must be changed with the correct local path 
 
 
 
-## Miscellaneous
+1. ## Miscellaneous
 ### Terrain Types and SCM Parameters
 Deformable terrains are modelled using the Project Chrono [[1]](#1) implementation of the Soil Contact Model (SCM) [[2]](#2). The complete list of implemented terrain types and respective terramechanical parameters is given in `terrain_list.py`.
 
