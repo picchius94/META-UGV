@@ -378,7 +378,7 @@ def main():
             # Initialise Simulator
             sim = mcs.simulator(path_image, (map_size_x,map_size_y,map_height.item()), (x0,y0,z0), (roll0,pitch0,yaw0), terrain_id, terrain_params_noise, visualisation = VISUALISATION)
             # Execute Actions
-            for ida in id_a:
+            for i, ida in enumerate(id_a):
                 # Define points for path follower
                 xv,yv,yaw_v = action2traj(ida, xi, yi, yawi, n_points)
                 zv = [z0]*len(xv)
@@ -395,7 +395,8 @@ def main():
                     else:
                         curv_tm1 = curv
                     data.append({"terrain_id": terrain_id, "run": run,
-                                 "segment": segment, "curvature": curv, "curvature_tm1": curv_tm1,
+                                 "segment": int(segment+i*n_segments), 
+                                 "curvature": curv, "curvature_tm1": curv_tm1,
                                  "energy": energy_segments[segment],
                                  "mean_pitch_est": est_pitch_segments[0][segment], "mean_roll_est": est_roll_segments[0][segment],
                                  "mean_pitch_meas": meas_pitch_segments[0,segment], "mean_roll_meas": meas_roll_segments[0,segment],

@@ -1,0 +1,9 @@
+path_data: ./simplex_runs_0.9m_v2.csv
+EPOCHS: 8000
+MODEL: model_single
+LOSS: mse
+LEARNING_RATE: 0.001
+LOG_DIR: ./log_simplex_runs_single_terrain_with_var/
+INPUT_FEATURES: ['mean_pitch_est', 'mean_roll_est', 'std_pitch_est', 'std_roll_est']
+TERRAIN_ID: 15
+BATCH_SIZE: 3577

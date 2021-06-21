@@ -37,7 +37,7 @@ def get_model(model_name, n_shots, n_meta, n_features = 2, b_size = 16, var = No
                 self.params = {}
                 self.params['LSTM'] = LSTM(128,return_sequences=True)
                 self.params['fc2'] = Dense(64,activation="relu", name = 'fc2')
-                self.params['fc3'] = Dense(n_meta,activation="relu", name = 'fc3')
+                self.params['fc3'] = Dense(1,activation="relu", name = 'fc3')
             def call(self, xg_shot, xe_shot, xg_meta, training=False):            
                 x_shot_tot = Concatenate(axis=-1)([xg_shot,xe_shot])
                 xg_shot_no_first = Cropping1D(cropping=(1,0))(xg_shot)

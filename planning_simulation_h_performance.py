@@ -1,4 +1,10 @@
-# This version add shots only with 'fastest', each time the terrain type changes, to be valid for all methods
+# Heuristic Function Experiment
+# The vehicle first collect 3 example pairs from an initial navigation
+# Then, three different algorithms are used to plan a path to the next target
+# 1) Meta-Adaptive: set this with 'meta'
+# 2) Meta-Optimal: set this with 'meta_0'
+# 3) Meta-ARA*: set this with 'meta_inf'
+
 import os
 import A_star
 import terrain_generator as tg
@@ -42,7 +48,7 @@ params["simplex_terrain_types"] = ["wavy","smooth","rough"]
 params["simplex_types_probs"] = [0.65,0.25,0.1]
 params["terrain_params_noise"] = 0.05
 
-params["EXPERIMENT_ID"] = "./log_simplex_runs_model04_challenging_ids_comb_v3/"
+params["EXPERIMENT_ID"] = "./Training/Exp00/log_meta/"
 params["META_MODEL"] = "model04_pos"
 
 params["WHICH_MODELS_BY_NAME"] = []
@@ -53,33 +59,32 @@ params["WHICH_MODELS_BY_INDEX"] = [0,1,2,3,4,5,6,7,8,9]
 params["WHICH_METHOD"] = ["meta","meta_0", "meta_inf"] 
 
 params["SEPARATE_MODEL"] = "model_single"
-separate_model_dir = "log_simplex_runs_single_terrain_with_var"
-separate_model_dir_2 = "log_simplex_runs_single_terrain_challenging_with_var"
-params["SEPARATE_MODEL_DIR"] = [separate_model_dir, separate_model_dir_2]
-separate_models_weights = {}
-separate_models_weights["0"] = "./{}/2021-03-05 17-46-09_tid_0/model_terrain_0.h5".format(separate_model_dir)
-separate_models_weights["1"] = "./{}/2021-03-05 17-46-09_tid_1/model_terrain_1.h5".format(separate_model_dir)
-separate_models_weights["3"] = "./{}/2021-03-05 17-46-09_tid_3/model_terrain_3.h5".format(separate_model_dir)
-separate_models_weights["4"] = "./{}/2021-03-05 17-46-09_tid_4/model_terrain_4.h5".format(separate_model_dir)
-separate_models_weights["9"] = "./{}/2021-03-05 17-46-09_tid_9/model_terrain_9.h5".format(separate_model_dir)
-separate_models_weights["11"] = "./{}/2021-03-05 17-46-09_tid_11/model_terrain_11.h5".format(separate_model_dir)
-separate_models_weights["13"] = "./{}/2021-03-05 17-46-09_tid_13/model_terrain_13.h5".format(separate_model_dir)
-separate_models_weights["14"] = "./{}/2021-03-05 17-46-09_tid_14/model_terrain_14.h5".format(separate_model_dir)
-separate_models_weights["15"] = "./{}/2021-03-05 17-46-09_tid_15/model_terrain_15.h5".format(separate_model_dir)
-separate_models_weights["16"] = "./{}/2021-03-05 17-46-09_tid_16/model_terrain_16.h5".format(separate_model_dir)
-separate_models_weights["17"] = "./{}/2021-03-05 17-46-09_tid_17/model_terrain_17.h5".format(separate_model_dir)
-separate_models_weights["22"] = "./{}/2021-03-05 17-46-09_tid_22/model_terrain_22.h5".format(separate_model_dir)
+separate_model_dir = "./Training/Exp00/log_separate_model/"
 
-separate_models_weights["2"] = "./{}/2021-03-07 08-42-36_tid_2/model_terrain_2.h5".format(separate_model_dir_2)
-separate_models_weights["5"] = "./{}/2021-03-07 08-42-36_tid_5/model_terrain_5.h5".format(separate_model_dir_2)
-separate_models_weights["7"] = "./{}/2021-03-07 08-42-36_tid_7/model_terrain_7.h5".format(separate_model_dir_2)
-separate_models_weights["8"] = "./{}/2021-03-07 08-42-36_tid_8/model_terrain_8.h5".format(separate_model_dir_2)
-separate_models_weights["10"] = "./{}/2021-03-07 08-42-36_tid_10/model_terrain_10.h5".format(separate_model_dir_2)
-separate_models_weights["12"] = "./{}/2021-03-07 08-42-36_tid_12/model_terrain_12.h5".format(separate_model_dir_2)
-separate_models_weights["18"] = "./{}/2021-03-07 08-42-36_tid_18/model_terrain_18.h5".format(separate_model_dir_2)
-separate_models_weights["19"] = "./{}/2021-03-07 08-42-36_tid_19/model_terrain_19.h5".format(separate_model_dir_2)
-separate_models_weights["20"] = "./{}/2021-03-07 08-42-36_tid_20/model_terrain_20.h5".format(separate_model_dir_2)
-separate_models_weights["21"] = "./{}/2021-03-07 08-42-36_tid_21/model_terrain_21.h5".format(separate_model_dir_2)
+separate_models_weights = {}
+separate_models_weights["0"] = "./{}2021-03-05 17-46-09_tid_0/model_terrain_0.h5".format(separate_model_dir)
+separate_models_weights["1"] = "./{}2021-03-05 17-46-09_tid_1/model_terrain_1.h5".format(separate_model_dir)
+separate_models_weights["3"] = "./{}2021-03-05 17-46-09_tid_3/model_terrain_3.h5".format(separate_model_dir)
+separate_models_weights["4"] = "./{}2021-03-05 17-46-09_tid_4/model_terrain_4.h5".format(separate_model_dir)
+separate_models_weights["9"] = "./{}2021-03-05 17-46-09_tid_9/model_terrain_9.h5".format(separate_model_dir)
+separate_models_weights["11"] = "./{}2021-03-05 17-46-09_tid_11/model_terrain_11.h5".format(separate_model_dir)
+separate_models_weights["13"] = "./{}2021-03-05 17-46-09_tid_13/model_terrain_13.h5".format(separate_model_dir)
+separate_models_weights["14"] = "./{}2021-03-05 17-46-09_tid_14/model_terrain_14.h5".format(separate_model_dir)
+separate_models_weights["15"] = "./{}2021-03-05 17-46-09_tid_15/model_terrain_15.h5".format(separate_model_dir)
+separate_models_weights["16"] = "./{}2021-03-05 17-46-09_tid_16/model_terrain_16.h5".format(separate_model_dir)
+separate_models_weights["17"] = "./{}2021-03-05 17-46-09_tid_17/model_terrain_17.h5".format(separate_model_dir)
+separate_models_weights["22"] = "./{}2021-03-05 17-46-09_tid_22/model_terrain_22.h5".format(separate_model_dir)
+
+separate_models_weights["2"] = "./{}/2021-03-07 08-42-36_tid_2/model_terrain_2.h5".format(separate_model_dir)
+separate_models_weights["5"] = "./{}/2021-03-07 08-42-36_tid_5/model_terrain_5.h5".format(separate_model_dir)
+separate_models_weights["7"] = "./{}/2021-03-07 08-42-36_tid_7/model_terrain_7.h5".format(separate_model_dir)
+separate_models_weights["8"] = "./{}/2021-03-07 08-42-36_tid_8/model_terrain_8.h5".format(separate_model_dir)
+separate_models_weights["10"] = "./{}/2021-03-07 08-42-36_tid_10/model_terrain_10.h5".format(separate_model_dir)
+separate_models_weights["12"] = "./{}/2021-03-07 08-42-36_tid_12/model_terrain_12.h5".format(separate_model_dir)
+separate_models_weights["18"] = "./{}/2021-03-07 08-42-36_tid_18/model_terrain_18.h5".format(separate_model_dir)
+separate_models_weights["19"] = "./{}/2021-03-07 08-42-36_tid_19/model_terrain_19.h5".format(separate_model_dir)
+separate_models_weights["20"] = "./{}/2021-03-07 08-42-36_tid_20/model_terrain_20.h5".format(separate_model_dir)
+separate_models_weights["21"] = "./{}/2021-03-07 08-42-36_tid_21/model_terrain_21.h5".format(separate_model_dir)
 
 #-------------------------Constants not to change-----------------------------------------------------------#
 belly = 0.5
