@@ -26,8 +26,8 @@ terrain_ids.extend([2,5,7,8,10,12,18,19,20,21])    # more challenging (6 is excl
 
 num_runs_per_id = 150
 simplex_terrain_types = ["wavy","smooth","rough"]
-simplex_types_probs = [0.65,0.25,0.1]
-terrain_params_noise = 0
+simplex_types_probs = [0.65,0.25,0.1] # proportions of the terrain types in the dataset 
+terrain_params_noise = 0 # noise to add to the terramechanical parameters (percentage of each value)
 
 map_size_x = 30
 map_size_y = 7
@@ -377,19 +377,18 @@ def main():
                 
             # Initialise Simulator
             sim = mcs.simulator(path_image, (map_size_x,map_size_y,map_height.item()), (x0,y0,z0), (roll0,pitch0,yaw0), terrain_id, terrain_params_noise, visualisation = VISUALISATION)
+            # Execute Actions
             for ida in id_a:
+                # Define points for path follower
                 xv,yv,yaw_v = action2traj(ida, xi, yi, yawi, n_points)
                 zv = [z0]*len(xv)
+                # Run simulator
                 if not sim.run((xv,yv,zv), target_speed):
                     print("Failure")
                     break
-                # Next initial state after single action
-                xi, yi, yawi = xv[-1], yv[-1], yaw_v[-1]
-                
-                # Retrieving energy from executed actions and saving in path planner memory
+                # Retrieving statistics from executed action and adding to data
                 energy_segments, est_pitch_segments, est_roll_segments, meas_pitch_segments, meas_roll_segments, meas_speed_segments  = segments_stats(sim.data_run, (xv,yv,yaw_v), Z)
                 curv = curvature_list[ida]
-                
                 for segment in range(len(energy_segments)):
                     if not segment:
                         curv_tm1 = prev_curv
@@ -403,8 +402,11 @@ def main():
                                  "var_pitch_meas": meas_pitch_segments[1,segment], "var_roll_meas": meas_roll_segments[1,segment],
                                  "var_pitch_est": est_pitch_segments[1][segment], "var_roll_est": est_roll_segments[1][segment],
                                  "initial_speed": meas_speed_segments[0,segment], "mean_speed": meas_speed_segments[1,segment]})
+                # Next initial state
+                xi, yi, yawi = xv[-1], yv[-1], yaw_v[-1]
                 prev_curv = curv
             
+            # Close simulation and save data in memory
             sim.close()
             pd.DataFrame(data).to_csv(path_output_file, index=False)
             
